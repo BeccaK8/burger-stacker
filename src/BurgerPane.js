@@ -16,7 +16,7 @@ export default class BurgerPane extends Component {
             <li key={i}>
                 <Ingredient 
                     ingredient={ing}
-                    clickFunc={() => {console.log('clickFunc')}}
+                    clickFunc={this.props.remove}
                     itemKey={i}
                 />
             </li>

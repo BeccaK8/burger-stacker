@@ -60,6 +60,29 @@ export default class BurgerStacker extends Component {
         });
     }
 
+    // this will remove a single ingredient from the burgerIngredients
+    removeFromStack = (evt) => {
+        // console.log('the original burgerIngredients: ', this.state.burgerIngredients);
+        // target a specific element in the burgerIngredients array
+        // maybe we need the index?
+        const clickIndex = evt.target.id;
+        // console.log('the click index?', clickIndex)
+        
+        // once we have our specific item targeted, remove it from the array
+        // make sure that the array in state is accurately updating
+        // create a copy of the original array
+        const currBurger = this.state.burgerIngredients.slice();
+        // console.log('the current burgerIngredients: ', currBurger);
+        
+        // update the copy of the array correctly -> removing the targeted item
+        currBurger.splice(clickIndex, 1);
+        // console.log('the current burgerIngredients after splice: ', currBurger);
+        // then overwrite that array in state with the newly updated copy
+        this.setState({
+            burgerIngredients: currBurger
+        });
+    }
+
     // this clears the burgerIngredients array, effectively clearing the burger
     clearBurger = () => {
         this.setState({ 
@@ -83,6 +106,7 @@ export default class BurgerStacker extends Component {
                     />
                     <BurgerPane 
                         ingredients={this.state.burgerIngredients}
+                        remove={this.removeFromStack}
                         clear={this.clearBurger}
                     />
                 </div>
