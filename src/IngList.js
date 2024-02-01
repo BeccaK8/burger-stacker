@@ -16,7 +16,7 @@ export default class IngList extends Component {
             <li key={i}>
                 <Ingredient 
                     ingredient={ing}
-                    clickFunc={() => {console.log('clickFunc')}}
+                    clickFunc={this.props.add}
                     itemKey={i}
                 />
             </li>
