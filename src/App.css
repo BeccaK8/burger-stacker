@@ -7,6 +7,10 @@ ul {
   list-style: none;
 }
 
+p {
+  padding: 5px;
+}
+
 .panes {
   display: flex;
   flex-direction: row;
