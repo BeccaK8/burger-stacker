@@ -54,9 +54,17 @@ export default class BurgerStacker extends Component {
         // class compoonnets use a special method to update their state
         // this method is called "setState"
         // setState is expecting an object, and within that object, we can refer to an individual piece of state to update
+        // the line in there is saying , grab all the burgerIngredients, keep them in the array, and add the new ingredient to the front of the array
         this.setState({
             burgerIngredients: [{ name: ingName, color: ingColor}, ...this.state.burgerIngredients]
         });
+    }
+
+    // this clears the burgerIngredients array, effectively clearing the burger
+    clearBurger = () => {
+        this.setState({ 
+            burgerIngredients: []
+        })
     }
 
 
@@ -75,6 +83,7 @@ export default class BurgerStacker extends Component {
                     />
                     <BurgerPane 
                         ingredients={this.state.burgerIngredients}
+                        clear={this.clearBurger}
                     />
                 </div>
             </>

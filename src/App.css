@@ -27,3 +27,12 @@ p {
   padding: 0 2em;
   width: 45%;
 }
+
+button {
+  margin: 15px;
+  height: 40px;
+  width: 20%;
+  align-self: center;
+  border-radius: 10px;
+  background-color: bisque;
+}
