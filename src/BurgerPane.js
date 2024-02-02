@@ -12,7 +12,6 @@ export default class BurgerPane extends Component {
         const { ingredients } = this.props;
         
         let burgerBits = ingredients.map((ing, i) => (
-            // this map will immediately return one item per loop iteration
             <li key={i}>
                 <Ingredient 
                     ingredient={ing}
